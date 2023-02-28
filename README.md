@@ -1,6 +1,5 @@
 # django-treemenu
-Django app that implements a tree menu
-
+Django app that implements a tree menu via template tag
 
 ## Technology stack
 

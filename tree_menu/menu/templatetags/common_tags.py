@@ -20,8 +20,8 @@ def draw_menu(context: Dict[str, any], menu: str) -> Dict[str, any]:
         items = Submenu.objects.filter(menu__title=menu)
         items_values = items.values()
         primary_item = [item for item in items_values.filter(parent=None)]
-        selected_item_id = int(context['request'].GET[menu])
-        selected_item = items.get(id=selected_item_id)
+        selected_item_slug = context['request'].GET[menu]
+        selected_item = items.get(slug=selected_item_slug)
         selected_item_ids = get_selected_item_ids(selected_item)
         for item in primary_item:
             if item['id'] in selected_item_ids:
